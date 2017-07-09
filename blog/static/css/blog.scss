@@ -1,6 +1,10 @@
 // blog.scss
 
-@import 'reset';
+@import "reset";
+@import "base";
+@import "variables";
+
+//-------------------------------------------------
 
 $font-stack:	'Bellefair', serif;
 
@@ -12,50 +16,57 @@ $heading-color: #B0413E;
 
 $default-padding: 10px;
 
+//-------------------------------------------------
 
 body {
-  text-align: center;
 	background-color: $web-bg-color;
+  background-image: url('../img/bg.png');
 }
 
 #wrapper {
   margin: 0 auto;
+   height: 100%;
 }
 
-h1, p {
-  padding: $default-padding;
-}
-h1 {
-  a {
-    color: #FCA205;
-    font: $font-stack;
-  }
+.col-md-10 {
+  border-width: 0 5px 0 5px;
+  border-style: solid;
+  border-color: #222;
+  background: #FFF;
+  padding: 0;
 }
 
 header {
   color: $primary-color;
   background-color: $header-bg-color;
+  margin-bottom: 20px;
+  height: 100px;
+  h1 {
+    text-align: center;
+    font-size: 42px;
+    padding: 20px;    
+  }
+}
+
+nav {
+  margin: 20px;
 }
 
 section {
-  width: 800px;
-  margin: 0 auto;
-  text-align: left;
+  padding: 15px;
 }
 
 article {
-  border-bottom: 1px solid #ccc;
-  p {
-    background-color: $article-bg-color;
-  }
+  margin-bottom: 30px;
   p.pub-date {
-    display: inline;
     float: right;
-    background-color: transparent;
+    display: inline;
   }
-  h1 {
-    color: $heading-color;
-    font-size: 1.2em;
-
+  .admin-editing {
+    position: relative;
+    top: -22px;         // Not clean mehtod
+    float: right;
+    display: inline;
   }
 }
+

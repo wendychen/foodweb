@@ -2,22 +2,46 @@
 <html>
 	<head>
 		<title>Food Web</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet"> 
+
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+
+  <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet"> 
 	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 	</head>
 
 	<body>
-    <div id="wrapper">
+    <div id="wrapper" class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
       <header>
         <h1>FoodWeb</h1>
       </header>
+      <nav id="menu" class="text-right">
 
-      <section>
-      <p>分享我喜愛的食物</p>
-      {% block content %}
-      {% endblock %}
+          <a href="{% url 'post_list' %}"><button type="button" class="btn btn-default">HOME</button></a>
+          
+          <a href="{% url 'add_post' %}">
+            <button type="button" class="btn btn-default" aria-label="Add a post"> 
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a Post
+            </button>
+          </a>
+
+       </nav>
+    
+      <section id="content">
+        {% block content %}
+        {% endblock %}
       </section>
+        </div>
+      </div>
     </div>
 	</body>
 
