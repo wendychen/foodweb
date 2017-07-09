@@ -21,12 +21,16 @@ urlpatterns = [
 ]
 """
 
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 
 from . import view
 
 urlpatterns = [
+	url(r'', include('blog.urls')),
 	url(r'^$', view.hello),
 	url(r'^admin/', admin.site.urls),
+
 ]
+
+
