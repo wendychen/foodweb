@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Food Web</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet"> 
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	</head>
+
+	<body>
+    <div id="wrapper">
+      <header>
+        <h1>FoodWeb</h1>
+      </header>
+
+      <section>
+      <p>分享我喜愛的食物</p>
+      {% block content %}
+      {% endblock %}
+      </section>
+    </div>
+	</body>
+
+</html>

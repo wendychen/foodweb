@@ -48,6 +48,11 @@ article {
   p {
     background-color: $article-bg-color;
   }
+  p.pub-date {
+    display: inline;
+    float: right;
+    background-color: transparent;
+  }
   h1 {
     color: $heading-color;
     font-size: 1.2em;
