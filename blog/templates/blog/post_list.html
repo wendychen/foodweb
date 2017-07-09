@@ -1,19 +1,30 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Food Web</title>
-		<link href="default.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet"> 
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 	</head>
 
 	<body>
-	<h1>Share the food I like.</h1>
-	<p>Welcome to my website. I am very happy.</p>
-	{% for post in posts %}
-		<div>
-			<p>published: {{ post.published_date }}</p>
-			<h1><a href="#">{{ post }}</a></h1>
-			<p>{{ post.text | linebreaksbr }}</p>
-		</div>
-	{% endfor %}
+    <div id="wrapper">
+      <header>
+        <h1>FoodWeb</h1>
+      </header>
+
+      <section>
+      <p>分享我喜愛的食物</p>
+      {% for post in posts %}
+        <article>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="#"> {{ post }} </a></h1>
+          <p>{{ post.text | linebreaksbr }}</p>
+        </article>
+      {% endfor %}
+
+      </section>
+    </div>
 	</body>
 
 </html>

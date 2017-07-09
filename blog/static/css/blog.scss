@@ -1,0 +1,56 @@
+// blog.scss
+
+@import 'reset';
+
+$font-stack:	'Bellefair', serif;
+
+$web-bg-color: #F5F0F6;
+$header-bg-color: #263956;
+$article-bg-color: #EEE;
+$primary-color: #FFFFFF;
+$heading-color: #B0413E;
+
+$default-padding: 10px;
+
+
+body {
+  text-align: center;
+	background-color: $web-bg-color;
+}
+
+#wrapper {
+  margin: 0 auto;
+}
+
+h1, p {
+  padding: $default-padding;
+}
+h1 {
+  a {
+    color: #FCA205;
+    font: $font-stack;
+  }
+}
+
+header {
+  color: $primary-color;
+  background-color: $header-bg-color;
+}
+
+section {
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+article {
+  border-bottom: 1px solid #ccc;
+  p {
+    background-color: $article-bg-color;
+  }
+  h1 {
+    color: $heading-color;
+    font-size: 1.2em;
+
+  }
+}
