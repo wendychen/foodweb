@@ -69,12 +69,8 @@ section {
 article {
   margin-bottom: 30px; }
   article p.pub-date {
-    float: right;
-    display: inline; }
+    float: right; }
   article .admin-editing {
-    position: relative;
-    top: -22px;
-    float: right;
-    display: inline; }
+    margin-bottom: 10px; }
 
 /*# sourceMappingURL=blog.css.map */

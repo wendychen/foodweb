@@ -60,13 +60,9 @@ article {
   margin-bottom: 30px;
   p.pub-date {
     float: right;
-    display: inline;
   }
   .admin-editing {
-    position: relative;
-    top: -22px;         // Not clean mehtod
-    float: right;
-    display: inline;
+    margin-bottom: 10px;
   }
 }
 

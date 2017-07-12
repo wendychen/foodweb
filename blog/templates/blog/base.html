@@ -25,14 +25,15 @@
         <h1>FoodWeb</h1>
       </header>
       <nav id="menu" class="text-right">
-
-          <a href="{% url 'post_list' %}"><button type="button" class="btn btn-default">HOME</button></a>
-          
-          <a href="{% url 'add_post' %}">
-            <button type="button" class="btn btn-default" aria-label="Add a post"> 
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a Post
-            </button>
-          </a>
+        {% if user.is_authenticated %}          
+          <p>Hello {{ user.username }} <small><a href="{% url 'logout' %}">Log out</a></small> </p>
+          <a href="{% url 'post_list' %}" class="btn btn-default">文章列表</a>
+          <a href="{% url 'add_post' %}"  class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增文章</a>
+          <a href="{% url 'post_draft_list' %}" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>檢視草稿</a>
+        {% else %}
+          <a href="{% url 'login' %}" class="btn btn-default"><span class="glyphicon glyphicon-lock"></span></a>
+        {% endif %}
 
        </nav>
     

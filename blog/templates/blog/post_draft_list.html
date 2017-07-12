@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  {% for post in posts %}
+    <p class="date">created: {{ post.created_date | date:'d-m-Y' }}</p>
+    <div class="panel panel-default">
+
+      <!-- pk=post.pk多了一個空白就parse不到，我要改變code寫作風格，或優化django -->
+      <div class="panel-heading"><h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1></div>
+      <div class="panel-body"><p>{{ post.text | truncatechars:200 }}</p></div>
+    </div>
+  {% endfor %}
+{% endblock %}
+
