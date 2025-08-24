@@ -34,7 +34,7 @@ def add_post(request):
 
 @login_required
 def post_edit(request, pk):
-  post = get_object_or_404(Post, pk = pk)
+  post = get_object_or_404(Post, pk=pk)
   if request.method == "POST":
     form = PostForm(request.POST, instance=post)
     if form.is_valid():
@@ -49,7 +49,7 @@ def post_edit(request, pk):
 
 @login_required
 def post_delete(request, pk):
-    post = get_object_or_404(Post, pk = pk)
+    post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
 
@@ -69,7 +69,7 @@ def add_comment_to_post(request, pk):
   if request.method == "POST":
     form = CommentForm(request.POST)
     if form.is_valid():
-      comment = form.save(commit = False)
+      comment = form.save(commit=False)
       comment.post = post
       comment.save()
       return redirect('post_detail',  pk=post.pk)
@@ -85,6 +85,6 @@ def comment_approve(request, pk):
 
 @login_required
 def comment_remove(request, pk):
-  comment = get_object_or_404(Comment, pk = pk)
+  comment = get_object_or_404(Comment, pk=pk)
   comment.delete()
   return redirect('post_detail', pk=comment.post.pk)
